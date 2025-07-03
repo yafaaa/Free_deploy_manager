@@ -1,7 +1,6 @@
 document.getElementById('projectForm').addEventListener('submit', async function(event) {
     event.preventDefault();
 
-    const name = document.getElementById('name').value;
     const backendLanguage = document.getElementById('backend_language').value;
     const databaseType = document.getElementById('database_type').value;
     const features = document.getElementById('features').value.split(',').map(f => f.trim());
