@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Recommendations</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Project Recommendations</h1>
+
+        <section id="project-form">
+            <h2>Submit Your Project</h2>
+            <form id="projectForm">
+                <label for="name">Project Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="backend_language">Backend Language:</label>
+                <input type="text" id="backend_language" name="backend_language" required>
+
+                <label for="database_type">Database Type:</label>
+                <input type="text" id="database_type" name="database_type" required>
+
+                <label for="features">Features (comma-separated):</label>
+                <input type="text" id="features" name="features">
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="recommendations">
+            <h2>Recommendations</h2>
+            <ul id="recommendationList"></ul>
+        </section>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
