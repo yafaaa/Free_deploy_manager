@@ -1,0 +1,53 @@
+Below is a compact “check‑list” you can ask the user to fill out **before** you run your matching logic, followed by a starter set of proven free‑tier stack pairings you can bake into your recommendation engine.
+
+---
+
+## 1  Ask the user for these four fields
+
+| Field                | Why it matters                                                                                                                               | Typical scale buckets to offer                                        |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| **Backend Language** | Determines which hosts give trouble‑free builds and cold‑start times (e.g., Vercel is perfect for Node/Next, Fly for Go, Render for Python). | Node / Deno / Python / Go / Java / PHP / .NET / anything‑in‑Docker    |
+| **Database Type**    | Drives the choice of free DB SaaS or self‑host.                                                                                              | PostgreSQL / MySQL / MongoDB / Redis (in‑memory)                      |
+| **Expected Traffic** | Lets you stay inside free quotas (requests, bandwidth, compute hours).                                                                       | *Tiny*: < 50 k req · mo⁻¹ · *Hobby*: 50 k – 500 k · *Busy*: 0.5 – 2 M |
+| **Data Size**        | Must fit the storage caps of the free plan.                                                                                                  | < 0.5 GB / 0.5 – 2 GB / 2 – 10 GB                                     |
+
+
+
+## 2  Ready‑made free‑tier combinations
+
+| # | Stack (what the user picks)                  | Hosting tier you can suggest                                                   | Main compute limits                                       | Free DB & storage cap                         | Works until…                               |
+| - | -------------------------------------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------- | --------------------------------------------- | ------------------------------------------ |
+| 1 | **Node.js / Next.js** + **PostgreSQL**       | **Vercel Hobby**                                                               | 100 GB‑hrs function execution, 100 GB transfer, 300 s/run | **Supabase Free** – 500 MB DB + 5 GB egress   | ≈ 100 k req/mo & small side‑project growth |
+| 2 | **Python (Django/FastAPI)** + **PostgreSQL** | **Render Free Web Service** (750 h/mo, spins down after 15 min idle)           | 512 MB RAM                                                | **Neon Free** – 0.5 GB storage, 190 compute h | a hobby MVP that sleeps when idle          |
+| 3 | **Go** + **MySQL**                           | **Fly.io free allowance** (up to three 256 MB shared‑cpu VMs, 160 GB outbound) | Always‑on, no idle spin‑down                              | **PlanetScale Dev** – 10 GB                   | small production apps & APIs               |
+| 4 | **Java / Spring Boot** + **MongoDB**         | **AWS Free**: EC2 t4g.small 750 h/mo *or* Lambda 1 M inv + 400 k GB‑s          | VM: 2 vCPU + 2 GB RAM                                     | **MongoDB Atlas Free** – 512 MB               | classroom or proof‑of‑concept workloads    |
+| 5 | **PHP** + **MySQL**                          | **Google Cloud Run free tier** (2 M requests, 180 k vCPU‑s, 1 GB egress)       | Container auto‑scale to zero                              | **PlanetScale Dev** – 10 GB                   | content sites with mostly read traffic     |
+
+### Key quota references
+
+* **Vercel Hobby** – 100 GB transfer / 100 GB‑hrs functions / 300 s per run ([vercel.com][1], [vercel.com][2])
+* **Supabase Free** – 500 MB DB, 5 GB bandwidth ([supabase.com][3])
+* **Render Free** – 750 instance‑hours/mo, spin‑down after 15 min idle ([render.com][4])
+* **Neon Free** – 0.5 GB storage, 190 compute h/mo ([neon.tech][5])
+* **Fly.io allowance** – up to 3 × 256 MB VMs + 160 GB egress under ≈ \$5 credit (free) ([community.fly.io][6])
+* **PlanetScale Developer plan** – 10 GB storage, 100 M reads/mo ([planetscale.com][7])
+* **AWS EC2 t4g.small Free Trial (through 31 Dec 2025)** – 750 h/mo ([aws.amazon.com][8])
+* **AWS Lambda Free Tier** – 1 M requests + 400 k GB‑s/mo ([aws.amazon.com][9])
+* **MongoDB Atlas Free Cluster** – 512 MB storage ([mongodb.com][10])
+* **Google Cloud Run Free** – 2 M requests, 180 k vCPU‑s, 360 k GiB‑s memory per mo ([cloud.google.com][11])
+
+
+
+This approach keeps the questionnaire minimal while still letting you steer users to realistic, zero‑cost hosting setups.
+
+[1]: https://vercel.com/docs/limits/fair-use-guidelines?utm_source=chatgpt.com "Fair use Guidelines - Vercel"
+[2]: https://vercel.com/changelog/higher-defaults-and-limits-for-vercel-functions-running-fluid-compute?utm_source=chatgpt.com "Higher defaults and limits for Vercel Functions running Fluid compute"
+[3]: https://supabase.com/pricing?utm_source=chatgpt.com "Pricing & Fees - Supabase"
+[4]: https://render.com/docs/free?utm_source=chatgpt.com "Deploy for Free – Render Docs"
+[5]: https://neon.tech/pricing?utm_source=chatgpt.com "Neon Pricing"
+[6]: https://community.fly.io/t/heroku-free-tier-migration/6550?utm_source=chatgpt.com "Heroku Free Tier Migration - Questions / Help - Fly.io community"
+[7]: https://planetscale.com/blog/introducing-new-planetscale-pricing?utm_source=chatgpt.com "New PlanetScale pricing: Scaler plan upgrades and our new ..."
+[8]: https://aws.amazon.com/ec2/instance-types/t4/?utm_source=chatgpt.com "Amazon EC2 T4g Instances"
+[9]: https://aws.amazon.com/lambda/pricing/?utm_source=chatgpt.com "Serverless Computing – AWS Lambda Pricing"
+[10]: https://www.mongodb.com/company/blog/product-release-announcements/free-your-genius-on-mongodb-atlas-free-tier?utm_source=chatgpt.com "Free Your Genius With MongoDB Atlas Free Tier"
+[11]: https://cloud.google.com/run/pricing?utm_source=chatgpt.com "Cloud Run pricing | Google Cloud"
