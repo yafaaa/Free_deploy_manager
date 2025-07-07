@@ -47,13 +47,23 @@ def recommend_backend_language(request):
         {'name': 'PHP + MySQL','description': 'Google Cloud Run Free & PlanetScale Dev','traffic': ['tiny','hobby','busy'],'size':['small','medium','large']},
     ]
 
-    matches = []
+    # Weighted scoring for each combo
+    scored = []
     for combo in combos:
         combo_lang, combo_db = combo['name'].split(' + ')
-        if combo_lang == lang and combo_db == db and traffic in combo['traffic'] and size in combo['size']:
-            matches.append({'name': combo['name'], 'description': combo['description']})
-    if not matches:
-        matches = [{'name': c['name'], 'description': c['description']} for c in combos]
+        score = 0
+        if combo_lang == lang:
+            score += 2
+        if combo_db == db:
+            score += 2
+        if traffic in combo['traffic']:
+            score += 1
+        if size in combo['size']:
+            score += 1
+        scored.append({'name': combo['name'], 'description': combo['description'], 'score': score})
+
+    # Sort by score descending
+    recommendations = sorted(scored, key=lambda x: x['score'], reverse=True)
 
     received = {'lang': lang, 'db': db, 'expected_traffic': traffic, 'data_size': size}
-    return JsonResponse({'received': received, 'recommendations': matches})
+    return JsonResponse({'received': received, 'recommendations': recommendations})

@@ -100,9 +100,9 @@
             if (!data.recommendations || data.recommendations.length === 0) {
               recList.innerHTML = '<li>No recommendations found.</li>';
             } else {
-              data.recommendations.forEach(r => {
+              (data.recommendations || []).forEach(r => {
                 const li = document.createElement('li');
-                li.textContent = `${r.name}: ${r.description}`;
+                li.textContent = r.description;
                 recList.appendChild(li);
               });
             }
