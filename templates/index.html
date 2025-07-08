@@ -14,50 +14,66 @@
         <section id="project-form">
             <h2>Submit Your Project</h2>
             <form id="projectForm">
-                <label for="backend_language">Backend Language:</label>
-                <select id="backend_language" name="backend_language" required>
-                    <option value="Python">Python</option>
-                    <option value="JavaScript">JavaScript</option>
-                    <option value="Java">Java</option>
-                    <option value="TypeScript">TypeScript</option>
-                    <option value="Go">Go (or Golang)</option>
-                    <option value="C#">C#</option>
-                    <option value="Rust">Rust</option>
-                    <option value="PHP">PHP</option>
-                    <option value="Ruby">Ruby</option>
-                    <option value="Kotlin">Kotlin</option>
-                    <option value="Swift">Swift</option>
-                    <option value="C++">C++</option>
-                    <option value="Dart">Dart</option>
-                    <option value="Scala">Scala</option>
-                    <option value="Elixir">Elixir</option>
-                </select>
-                <label for="database_type">Database Type:</label>
-                <select id="database_type" name="database_type" required>
-                    <option value="PostgreSQL">PostgreSQL</option>
-                    <option value="MySQL">MySQL</option>
-                    <option value="Microsoft SQL Server">Microsoft SQL Server</option>
-                    <option value="Oracle Database">Oracle Database</option>
-                    <option value="SQLite">SQLite</option>
-                    <option value="MongoDB">MongoDB</option>
-                    <option value="Redis">Redis</option>
-                    <option value="Elasticsearch">Elasticsearch</option>
-                    <option value="Apache Cassandra">Apache Cassandra</option>
-                    <option value="Amazon DynamoDB">Amazon DynamoDB</option>
-                </select>
-                <label for="expected_traffic">Expected Traffic:</label>
-                <select id="expected_traffic" name="expected_traffic" required>
-                    <option value="tiny">&lt; 50k req/mo (Tiny)</option>
-                    <option value="hobby">50k–500k req/mo (Hobby)</option>
-                    <option value="busy">0.5–2M req/mo (Busy)</option>
-                </select>
-                <label for="data_size">Data Size:</label>
-                <select id="data_size" name="data_size" required>
-                    <option value="small">&lt; 0.5 GB (Small)</option>
-                    <option value="medium">0.5–2 GB (Medium)</option>
-                    <option value="large">2–10 GB (Large)</option>
-                </select>
-                <button type="submit">Submit</button>
+                <div class="form-flex-row">
+                    <div class="form-dropdowns">
+                        <div class="form-group">
+                            <label for="backend_language">Backend Language:</label>
+                            <select id="backend_language" name="backend_language" required>
+                                <option value="Python">Python</option>
+                                <option value="JavaScript">JavaScript</option>
+                                <option value="Java">Java</option>
+                                <option value="TypeScript">TypeScript</option>
+                                <option value="Go">Go (or Golang)</option>
+                                <option value="C#">C#</option>
+                                <option value="Rust">Rust</option>
+                                <option value="PHP">PHP</option>
+                                <option value="Ruby">Ruby</option>
+                                <option value="Kotlin">Kotlin</option>
+                                <option value="Swift">Swift</option>
+                                <option value="C++">C++</option>
+                                <option value="Dart">Dart</option>
+                                <option value="Scala">Scala</option>
+                                <option value="Elixir">Elixir</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="database_type">Database Type:</label>
+                            <select id="database_type" name="database_type" required>
+                                <option value="PostgreSQL">PostgreSQL</option>
+                                <option value="MySQL">MySQL</option>
+                                <option value="Microsoft SQL Server">Microsoft SQL Server</option>
+                                <option value="Oracle Database">Oracle Database</option>
+                                <option value="SQLite">SQLite</option>
+                                <option value="MongoDB">MongoDB</option>
+                                <option value="Redis">Redis</option>
+                                <option value="Elasticsearch">Elasticsearch</option>
+                                <option value="Apache Cassandra">Apache Cassandra</option>
+                                <option value="Amazon DynamoDB">Amazon DynamoDB</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="expected_traffic">Expected Traffic:</label>
+                            <select id="expected_traffic" name="expected_traffic" required>
+                                <option value="tiny">&lt; 50k req/mo (Tiny)</option>
+                                <option value="hobby">50k–500k req/mo (Hobby)</option>
+                                <option value="busy">0.5–2M req/mo (Busy)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="data_size">Data Size:</label>
+                            <select id="data_size" name="data_size" required>
+                                <option value="small">&lt; 0.5 GB (Small)</option>
+                                <option value="medium">0.5–2 GB (Medium)</option>
+                                <option value="large">2–10 GB (Large)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-note">
+                        <strong>Note:</strong><br>
+                        This recommendation algorithm aligns with typical deployment considerations, where factors such as <b>Expected Traffic</b> and <b>Data Size</b> parameters often exhibit a lower influence on core architectural choices compared to other variables.
+                    </div>
+                </div>
+                <button type="submit">Get Recommendations</button>
             </form>
         </section>
         <section id="recommendations">
