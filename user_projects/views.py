@@ -41,10 +41,10 @@ def recommend_backend_language(request):
 
     combos = [
         {'name': 'JavaScript + PostgreSQL','description': 'Vercel Hobby & Supabase Free','traffic': ['tiny','hobby'],'size':['small']},
-        {'name': 'Python + PostgreSQL','description': 'Render Free Web Service & Neon Free','traffic': ['tiny','hobby'],'size':['small']},
+        {'name': 'Python + PostgreSQL','description': 'Render Free & Neon Free','traffic': ['tiny','hobby'],'size':['small']},
         {'name': 'Go + MySQL','description': 'Fly.io Free & PlanetScale Dev','traffic': ['tiny','hobby','busy'],'size':['small','medium','large']},
-        {'name': 'Java + MongoDB','description': 'AWS Free (EC2/Lambda) & MongoDB Atlas Free','traffic': ['tiny','hobby','busy'],'size':['small']},
-        {'name': 'PHP + MySQL','description': 'Google Cloud Run Free & PlanetScale Dev','traffic': ['tiny','hobby','busy'],'size':['small','medium','large']},
+        {'name': 'Java + MongoDB','description': 'AWS (EC2/Lambda) & MongoDB Atlas','traffic': ['tiny','hobby','busy'],'size':['small']},
+        {'name': 'PHP + MySQL','description': 'Google Cloud & PlanetScale Dev','traffic': ['tiny','hobby','busy'],'size':['small','medium','large']},
     ]
 
     # Weighted scoring for each combo
