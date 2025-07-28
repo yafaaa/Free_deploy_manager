@@ -10,9 +10,10 @@
 </head>
 <body>
     <div id="app">
-        <h1>Project Recommendations</h1>
-        <div class="main-content">
-            <section id="project-form">
+        <div class="content-wrapper">
+    <h1>Project<br>Recommendations</h1>
+            <div class="main-content">
+            <section id="project-form" class="fade-in">
                 <h2>Submit Your Project</h2>
                 <form id="projectForm">
                     <div class="form-flex-row">
@@ -69,21 +70,49 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-note">
-                            <strong>Note:</strong><br>
-                            This recommendation algorithm aligns with typical deployment considerations, where factors such as <b>Expected Traffic</b> and <b>Data Size</b> parameters often exhibit a lower influence on core architectural choices compared to other variables.
+                        <div class="form-note-actions-row">
+                            <div class="form-note">
+                                <strong>Note:</strong><br>
+                                This recommendation algorithm aligns with typical deployment considerations, where factors such as <b>Expected Traffic</b> and <b>Data Size</b> parameters often exhibit a lower influence on core architectural choices compared to other variables.
+                            </div>
+                            <button type="submit">Get Recommendations</button>
                         </div>
                     </div>
-                    <button type="submit">Get Recommendations</button>
                 </form>
             </section>
             <section id="recommendations">
-                <h2>Recommendations</h2>
+                <div class="placeholder-container" id="placeholderContainer">
+                    <div class="placeholder-content">
+                        <div class="placeholder-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 12L12 16L16 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+                            </svg>
+                        </div>
+                        <h3>Your recommendations will appear here!</h3>
+                        <p>Select your project details on the left and click "Get Recommendations" to discover the best deployment platforms for your project.</p>
+                        <div class="placeholder-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">🚀</span>
+                                <span>Optimized for your tech stack</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">💡</span>
+                                <span>Free tier recommendations</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">⚡</span>
+                                <span>Traffic & data size considered</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="recommendationList-outer">
                     <div id="recommendationList"></div>
                 </div>
 
             </section>
+            </div>
         </div>
     </div>
     <script src="/static/script.js"></script>
